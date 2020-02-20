@@ -9,6 +9,13 @@
   </head>
 
   <body>
+    <div class="container-fluid">
+      <header class="row p-5 mb-2 bg-primary">
+        <%= link_to "SDGs-flow", "#", class: "col col-8 text-white text-uppercase" %>
+        <%= link_to "佐藤", "#", class: "col-2 text-white btn-default" %>
+        <%= link_to "ログアウト", "#", class: "col-2 text-white" %>
+      </header>
+    </div>
     <%= yield %>
   </body>
 </html>
