@@ -10,7 +10,7 @@
 
   <body>
     <div class="container-fluid">
-      <header class="row p-5 mb-2 bg-primary">
+      <header class="row p-5 bg-primary">
         <%= link_to "SDGs-flow", root_path, class: "col col-8 text-white text-uppercase" %>
         <% if user_signed_in? %>
           <%= link_to current_user.name, "#", class: "col-2 text-white btn-default" %>
