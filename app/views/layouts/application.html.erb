@@ -12,6 +12,9 @@
     <div class="container-fluid">
       <header class="row p-5 bg-primary">
         <%= link_to "SDGs-flow", root_path, class: "col col-8 text-white text-uppercase" %>
+        <%= link_to (new_group_path) do%>
+          <button type="button" class="btn btn-warning">グループ作成</button>
+        <% end%>
         <% if user_signed_in? %>
           <%= link_to current_user.name, "#", class: "col-2 text-white btn-default" %>
           <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "col-2 text-white" %>
