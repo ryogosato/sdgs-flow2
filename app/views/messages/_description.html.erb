@@ -3,8 +3,8 @@
     <div class="media">
       <%= image_tag @groups.image, class: 'd-flex align-self-start mr-3' %>
       <div class="media-body">
-        <p class="mt-0">
-        <%= @groups.content%>
+        <p class="mt-0 h-100">
+        <%= safe_join(@groups.content.split("\n"), tag(:br))%>
         </p>
       </div>
     </div>
