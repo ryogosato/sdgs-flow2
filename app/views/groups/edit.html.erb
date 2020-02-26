@@ -1,14 +1,2 @@
 <h1>グループ編集</h1>
-<%= form_for @group do |f| %>
-  <%= f.text_field :name, class: "form-control", placeholder: "グループ名を入力してください" %>
-  <div class="container-fluid">
-    <div class="row">
-      <%= f.label :image,"画像" do%>
-        <%= image_tag @group.image, class: 'd-flex align-self-start mr-3' %>
-        <%= f.file_field :image, class: "form-control d-none", placeholder: "写真" %>画像を変更
-      <% end %>
-      <%= f.text_area :content, class: "form-control  col-9", placeholder: "説明", size:"10"%>
-      <%= f.submit "Save", class: "btn btn-success" %>
-    </div>
-  </div>
-<% end %>
+<%= render 'form'%>
