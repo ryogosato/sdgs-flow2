@@ -15,23 +15,17 @@
 </div>
 <div class="container-fluid">
   <div class="row">
-    <div>
-      <div class="card-deck">
+    <% @groups.messages.each do |message|%>
+      <%= link_to "/groups/#{@groups.id}/messages/#{message.id}", method: :delete do%>
         <div class="card">
           <div class="card-body">
-            <p class="card-title"> current_user.name </p>
-            <p class="card-text">寄付する</p>
+            <p class="card-title"><%= message.user.name%></p>
+            <p class="card-text"><%= message.content%></p>
           </div>
         </div>
-        <h1>👉</h1>
-        <div class="card">
-          <div class="card-body">
-            <h4 class="card-title">佐藤</h4>
-            <p class="card-text">寄付する</p>
-          </div>
-        </div>
-      </div>
-    </div>
+      <% end%>
+      <h1>👉</h1>
+    <% end %>
   </div>
 </div>
 <div class="container">
@@ -46,3 +40,5 @@
     <% end %>
   </div>
 </div>
+
+

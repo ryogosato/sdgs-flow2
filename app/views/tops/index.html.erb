@@ -2,25 +2,6 @@
   <div class="row">
     <a href="#"><img src="assets/SDGs.jpeg" class="img-fluid" alt="Responsive image"></a>
 
-    <%= link_to (groups_path) do%>
-      <img src="assets/1.png" class="img-fluid" alt="Responsive image">
-    <% end%>
-    <%= link_to (groups_path) do%>
-      <img src="assets/2.png" class="img-fluid" alt="Responsive image">
-    <% end%>
-    <%= link_to (groups_path) do%>
-      <img src="assets/3.png" class="img-fluid" alt="Responsive image">
-    <% end%>
-    <%= link_to (groups_path) do%>
-      <img src="assets/4.png" class="img-fluid" alt="Responsive image">
-    <% end%>
-    <%= link_to (groups_path) do%>
-      <img src="assets/5.png" class="img-fluid" alt="Responsive image">
-    <% end%>
-    <%= link_to (groups_path) do%>
-      <img src="assets/6.png" class="img-fluid" alt="Responsive image">
-    <% end%>
-
     <% @groups.each do |group|%>
       <%= link_to (group_messages_path(group)) do%>
         <%= image_tag group.image.to_s, class: 'img-fluid' %>
