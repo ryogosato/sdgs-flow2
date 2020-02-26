@@ -1,5 +1,48 @@
 <%= link_to (edit_group_path(@groups)) do%>
   <button type="button" class="btn btn-warning">グループ編集</button>
 <% end%>
-<%= render 'description'%>
-<%= render 'main_chat'%>
+<div class="container-fluid">
+  <div class="row">
+    <div class="media">
+      <%= image_tag @groups.image, class: 'd-flex align-self-start mr-3' %>
+      <div class="media-body">
+        <p class="mt-0 h-100">
+        <%= safe_join(@groups.content.split("\n"), tag(:br))%>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container-fluid">
+  <div class="row">
+    <div>
+      <div class="card-deck">
+        <div class="card">
+          <div class="card-body">
+            <p class="card-title"> current_user.name </p>
+            <p class="card-text">寄付する</p>
+          </div>
+        </div>
+        <h1>👉</h1>
+        <div class="card">
+          <div class="card-body">
+            <h4 class="card-title">佐藤</h4>
+            <p class="card-text">寄付する</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <%= form_for [@groups, @message] do |f|%>
+      <div class="input-group p-5">
+        <%= f.text_area :content, class: "form-control  col-9", placeholder: "type a message"%>
+        <div class="input-group-append">
+          <%= f.submit "Save", class: "btn btn-success" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
