@@ -2,6 +2,7 @@
   <%= f.text_field :name, class: "form-control", placeholder: "グループ名を入力してください" %>
   <div class="container-fluid">
     <div class="row">
+      <%= f.text_field :youtube_url, class: "form-control", placeholder: "Youtube_url" %>
       <%= f.label :image,"画像" do%>
         <%if @group.image.present?%>
           <%= image_tag @group.image, class: 'd-flex align-self-start mr-3' %>
