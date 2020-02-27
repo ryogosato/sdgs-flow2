@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200225032054) do
+ActiveRecord::Schema.define(version: 20200227052316) do
 
   create_table "group_users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "group_id"
@@ -22,11 +22,12 @@ ActiveRecord::Schema.define(version: 20200225032054) do
   end
 
   create_table "groups", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "name",                     null: false
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
+    t.string   "name",                      null: false
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
     t.string   "image"
-    t.text     "content",    limit: 65535
+    t.text     "content",     limit: 65535
+    t.string   "youtube_url"
     t.index ["name"], name: "index_groups_on_name", unique: true, using: :btree
   end
 
