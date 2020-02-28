@@ -1,5 +1,6 @@
 class GroupsController < ApplicationController
-
+  before_action :move_to_index
+  
   def new
     @group = Group.new
     @group.users << current_user
@@ -36,5 +37,9 @@ class GroupsController < ApplicationController
   private
   def group_params
     params.require(:group).permit(:name, :image, :content, :youtube_url, user_ids: [])
+  end
+
+  def move_to_index
+    redirect_to root_path unless user_signed_in?
   end
 end

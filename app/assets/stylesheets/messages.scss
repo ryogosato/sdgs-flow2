@@ -2,8 +2,44 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .container-fluid {
-  background: -moz-radial-gradient(#FFF, rgb(242, 255, 120) 40%, rgb(63, 241, 116));
-  background: -webkit-radial-gradient(#FFF, rgb(255, 120, 120) 40%, #F13F79);
-  background: radial-gradient(#FFF, rgb(120, 251, 255) 40%, rgb(63, 161, 241));
+  background-image: url(canada-2.jpg);
+  background-position: center center;
   background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.container-fluid.clearfix {
+  background-image: url(water.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  height: 100vh;
+}
+
+.img-fluid {
+  opacity: 1;
+  -webkit-transition: .3s ease-in-out;
+  transition: .3s ease-in-out;
+}
+
+.img-fluid:hover {
+  opacity: .5;
+}
+
+.scroll {
+  overflow-y: auto;
+}
+
+.height-fixed {
+  height: 315px;
+}
+
+.devise {
+  background-image: url(b-blue.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
 }
