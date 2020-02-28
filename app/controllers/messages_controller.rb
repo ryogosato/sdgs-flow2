@@ -1,5 +1,6 @@
 class MessagesController < ApplicationController
   before_action :set_group
+  before_action :move_to_index, except: :index
 
   def index
     @message = Message.new
@@ -24,5 +25,9 @@ class MessagesController < ApplicationController
 
   def set_group
     @groups = Group.find(params[:group_id])
+  end
+
+  def move_to_index
+    redirect_to action: :index unless user_signed_in?
   end
 end

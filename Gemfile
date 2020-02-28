@@ -61,3 +61,6 @@ gem 'pry-rails'
 
 gem 'carrierwave'
 gem 'mini_magick'
+
+gem 'font-awesome-sass', '~> 5.4.1'
+gem "font-awesome-rails"

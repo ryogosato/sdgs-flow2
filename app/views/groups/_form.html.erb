@@ -1,18 +1,38 @@
+
 <%= form_for @group do |f| %>
-  <%= f.text_field :name, class: "form-control", placeholder: "グループ名を入力してください" %>
-  <div class="container-fluid">
-    <div class="row">
-      <%= f.text_field :youtube_url, class: "form-control", placeholder: "Youtube_url" %>
-      <%= f.label :image,"画像" do%>
-        <%if @group.image.present?%>
-          <%= image_tag @group.image, class: 'd-flex align-self-start mr-3' %>
-          <%= f.file_field :image, class: "form-control d-none", placeholder: "写真" %>画像を変更
-        <%else%>
-          <%= f.file_field :image, class: "form-control d-none", placeholder: "写真" %>画像を変更
-        <%end%>
-      <% end %>
-      <%= f.text_area :content, class: "form-control  col-9", placeholder: "説明", size:"10"%>
-      <%= f.submit "Save", class: "btn btn-success" %>
+  <div class="row p-5">
+    <div class="col col-6">グループ名
+      <%= f.text_field :name, class: "form-control", placeholder: "グループ名を入力してください" %>
     </div>
+    <div class="col col-6">Youtube URL
+      <%= f.text_field :youtube_url, class: "form-control", placeholder: "Youtube_url" %>
+    </div>
+  </div>
+  <div class="row p-5">
+        <%if @group.image.present?%>
+          <div class="col col-6 ">
+            <%= f.label :image, type="button", class:"btn btn-info" do%>
+              画像変更
+              <%= f.file_field :image, class: "form-control d-none", placeholder: "写真"  %>
+            <%end%>
+            <%= image_tag @group.image, class: 'd-flex justify-content-around' %>
+          </div>
+        <%else%>
+          <div>
+            <%= f.label :image, type="button", class:"btn btn-info text-center" do%>
+              <div class="text-center"> 画像設定</div>
+              <%= f.file_field :image, class: "form-control d-none", placeholder: "写真" %>
+            <%end%>
+          </div>
+        <%end%>
+        <div class="col col-6">
+          <%if @group.youtube_url.present? %>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/<%=(@group.youtube_url).last(11)%>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <%end%>
+        </div>
+  </div>
+  <div class="row m-5">
+      <%= f.text_area :content, class: "form-control  col-9 ", placeholder: "説明", size:"100x30"%>
+      <%= f.submit "Save", class: "btn btn-success " %>
   </div>
 <% end %>
