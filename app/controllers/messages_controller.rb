@@ -4,27 +4,29 @@ class MessagesController < ApplicationController
 
   def index
     @message = Message.new
+    @messages = @group.messages.includes(:user)
   end
 
   def create
-    @groups.messages.create(message_params)
-    redirect_to group_messages_path(@groups)
+    @message = @group.messages.new(message_params)
+    @message.save
+    redirect_to group_messages_path(@group)
   end
 
   def destroy
     message = Message.find(params[:id])
     message.destroy
-    redirect_to group_messages_path(@groups)
+    redirect_to group_messages_path(@group)
   end
 
   private
 
   def message_params
-    params.require(:message).permit(:content, :image).merge(user_id: current_user.id)
+    params.require(:message).permit(:content).merge(user_id: current_user.id)
   end
 
   def set_group
-    @groups = Group.find(params[:group_id])
+    @group = Group.find(params[:group_id])
   end
 
   def move_to_index
