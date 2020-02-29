@@ -1,25 +1,25 @@
 <div class="container-fluid p-3 clearfix">
   <% if user_signed_in? %>
-    <%= link_to (edit_group_path(@groups)) do%>
+    <%= link_to (edit_group_path(@group)) do%>
       <button type="button" class="btn btn-warning">グループ編集</button>
     <% end%>
-    <%= link_to "/groups/#{@groups.id}", method: :delete do%>
+    <%= link_to "/groups/#{@group.id}", method: :delete do%>
       <button type="button" class="btn btn-danger">削除</button>
     <% end %>
   <%end%>
   <div class="row">
     <div class="media p-3 ">
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/<%=(@groups.youtube_url).last(11)%>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/<%=(@group.youtube_url).last(11)%>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       <div class="media-body height-fixed ">
         <p class="mt-0 h-100 scroll p-4 border">
-        <%= safe_join(@groups.content.split("\n"), tag(:br))%>
+        <%= safe_join(@group.content.split("\n"), tag(:br))%>
         </p>
       </div>
     </div>
   </div>
   <div class="row">
-    <% @groups.messages.each do |message|%>
-      <%= link_to "/groups/#{@groups.id}/messages/#{message.id}", method: :delete do%>
+    <% @messages.each do |message|%>
+      <%= link_to "/groups/#{@group.id}/messages/#{message.id}", method: :delete do%>
         <div class="card">
           <div class="card-body">
             <h3 class="card-content"><%= message.content%></h3>
@@ -31,7 +31,7 @@
     <% end %>
   </div>
   <div class="row float-right ">
-    <%= form_for [@groups, @message] do |f|%>
+    <%= form_for [@group, @message] do |f|%>
       <div class="input-group mt-2 p-3 ">
         <%= f.text_area :content, class: "form-control col-9 ", placeholder: "type a message", size: "50"%>
         <div class="input-group-append">
