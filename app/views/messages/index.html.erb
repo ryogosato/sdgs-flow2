@@ -17,12 +17,12 @@
       </div>
     </div>
   </div>
-  <div class="row">
+  <div class="row c">
     <% @messages.each do |message|%>
       <%= link_to "/groups/#{@group.id}/messages/#{message.id}", method: :delete do%>
         <div class="card">
           <div class="card-body">
-            <h3 class="card-content"><%= message.content%></h3>
+            <h5 class="card-content"><%= message.content%></h3>
             <h6 class="card-user"><%= message.user.name%></h6>
           </div>
         </div>
@@ -32,11 +32,11 @@
   </div>
   <div class="row float-right ">
     <%= form_for [@group, @message] do |f|%>
-      <div class="input-group mt-2 p-3 ">
+      <div class="input-group p-5 ">
         <%= f.text_area :content, class: "form-control col-9 ", placeholder: "type a message", size: "50"%>
         <div class="input-group-append">
           <%= f.submit "Save", class: "btn btn-success" %>
-        </div>
+        </div>　　
       </div>
     <% end %>
   </div>
