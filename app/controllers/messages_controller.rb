@@ -9,8 +9,13 @@ class MessagesController < ApplicationController
 
   def create
     @message = @group.messages.new(message_params)
-    @message.save
-    redirect_to group_messages_path(@group)
+    if @message.save
+      respond_to do |format|
+        format.json
+      end
+    else
+      redirect_to group_messages_path(@group)
+    end
   end
 
   def destroy
