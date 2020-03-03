@@ -13,7 +13,7 @@
         <h1><%= link_to "SDGs-flow", root_path, class: "text-white text-uppercase col col-3" %></h1>
         <div class="col col-9">
           <% if user_signed_in? %>
-            <%= link_to current_user.name, "#", class: "col-1 text-white btn-default" %>
+            <%= link_to current_user.name, "/users/#{current_user.id}", class: "col-1 text-white btn-default" %>
             <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "col-1 text-white" %>
             <%= link_to (new_group_path) do%>
               <button type="button" class="btn btn-warning text-right">グループ作成</button>
