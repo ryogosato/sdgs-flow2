@@ -1,8 +1,7 @@
 $(function(){
   function buildHTML(message){
     var html =
-      `
-        <div class="card">
+        `<div class="card">
           <div class="card-body">
             <h3 class="card-content">${message.content}</h3>
             <h6 class="card-user">${message.user_name}</h6>
