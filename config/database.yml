@@ -49,6 +49,7 @@ test:
 #
 production:
   <<: *default
-  database: sdgs-flow2_production
-  username: sdgs-flow2
-  password: <%= ENV['SDGS-FLOW2_DATABASE_PASSWORD'] %>
+  database: sdgs-flow2_production #そのまま
+  username: root                  #rootに変更
+  password: <%= ENV['DATABASE_PASSWORD'] %> #chat-spadeで使った変数
+  socket: /var/lib/mysql/mysql.sock #必須の指定
