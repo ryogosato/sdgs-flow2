@@ -2,7 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .container-fluid {
-  background-image: url(canada-2.jpg);
+  background-image: image-url("canada-2.jpg");
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -10,7 +10,7 @@
 }
 
 .container-fluid.clearfix {
-  background-image: url(water.jpg);
+  background-image: image-url("water.jpg");
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -37,7 +37,7 @@
 }
 
 .devise {
-  background-image: url(b-blue.jpg);
+  background-image: image-url("b-blue.jpg");
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
