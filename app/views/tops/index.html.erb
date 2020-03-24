@@ -1,7 +1,7 @@
 <div class="container-fluid">
   <div class="row clearfix">
     <%=link_to (tops_path) do %>
-      <%= image_tag asset_path("/assets/images/sdgs.jpeg"), class: 'img-fluid p-3'%>
+      <%= image_tag asset_path("sdgs.jpeg"), class: 'img-fluid p-3'%>
     <% end %>
     <% @groups.each do |group|%>
       <%= link_to (group_messages_path(group)) do%>
