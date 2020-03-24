@@ -15,7 +15,7 @@
               画像変更
               <%= f.file_field :image, class: "form-control d-none", placeholder: "写真"  %>
             <%end%>
-            <%= image_tag aseets_path(@group.image), class: 'd-flex justify-content-around' %>
+            <%= image_tag asset_path(@group.image), class: 'd-flex justify-content-around' %>
           </div>
         <%else%>
           <div>
