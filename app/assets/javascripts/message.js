@@ -1,12 +1,16 @@
 $(function(){
   function buildHTML(message){
     var html =
-        `<div class="card">
-          <div class="card-body">
-            <h3 class="card-content">${message.content}</h3>
-            <h6 class="card-user">${message.user_name}</h6>
+      `<div class="card">
+        <div class="card-body">
+          <h5 class="card-content">${message.content}</h5>
+          <div class="d-flex justify-content-around">
+            <div class="card-user">
+              ${message.user_name}
+            </div>
           </div>
         </div>
+      </div>
       <h1>👉</h1>`
     return html;
   }

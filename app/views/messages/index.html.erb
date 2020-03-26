@@ -22,12 +22,12 @@
       <%= link_to "/groups/#{@group.id}/messages/#{message.id}", method: :delete do%>
         <div class="card">
           <div class="card-body">
-            <h5 class="card-content"><%= message.content%></h3>
-            <div class="d-flex justify-content-around">
-              <div class="card-user">
+            <h5 class="card-content"><%= message.content%></h5>
+            <div class="d-flex pull-right">
+              <div class="card-user m-1">
                 <%= message.user.name%>
               </div>
-              <div class="card-time">
+              <div class="card-time m-1">
                 <%= render partial: "time", locals: { message: message } %>
               </div>
             </div>
@@ -43,7 +43,7 @@
         <%= f.text_area :content, class: "form-control col-9 ", placeholder: "type a message", size: "50"%>
         <div class="input-group-append">
           <%= f.submit "Save", class: "btn btn-success" %>
-        </div>　　
+        </div>
       </div>
     <% end %>
   </div>
