@@ -23,9 +23,13 @@
         <div class="card">
           <div class="card-body">
             <h5 class="card-content"><%= message.content%></h3>
-            <p class="card-user"><%= message.user.name%></p>
-            <p class="card-time">
-              <%= render partial: "time", locals: { message: message } %>
+            <p class="d-flex">
+              <div class="card-user">
+                <%= message.user.name%>
+              </div>
+              <div class="card-time">
+                <%= render partial: "time", locals: { message: message } %>
+              </div>
             </p>
           </div>
         </div>
