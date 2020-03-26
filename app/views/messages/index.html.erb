@@ -23,14 +23,14 @@
         <div class="card">
           <div class="card-body">
             <h5 class="card-content"><%= message.content%></h3>
-            <p class="d-flex">
+            <div class="d-flex justify-content-around">
               <div class="card-user">
                 <%= message.user.name%>
               </div>
               <div class="card-time">
                 <%= render partial: "time", locals: { message: message } %>
               </div>
-            </p>
+            </div>
           </div>
         </div>
       <% end%>
