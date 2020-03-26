@@ -15,9 +15,11 @@
           <% if user_signed_in? %>
             <%= link_to current_user.name, "/users/#{current_user.id}", class: "col-1 text-white btn-default" %>
             <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "col-1 text-white" %>
-            <%= link_to (new_group_path) do%>
-              <button type="button" class="btn btn-warning text-right">グループ作成</button>
-            <% end%>
+            <% if current_user.admin? %>
+              <%= link_to (new_group_path) do%>
+                <button type="button" class="btn btn-warning text-right">グループ作成</button>
+              <% end%>
+            <% end %>
           <% else %>
             <%= link_to "新規登録", new_user_registration_path, class: "col-1 text-white btn-default" %>
             <%= link_to "ログイン", user_session_url, class: "col-1 text-white" %>

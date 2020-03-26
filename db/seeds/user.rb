@@ -3,7 +3,8 @@ User.create!(
     {
       name: 'ryogo',
       email: 'ryogo@ryogo.com',
-      password: "ryogo8888"
+      password: "ryogo8888",
+      admin: true
     },
     {
       name: 'jiro',
