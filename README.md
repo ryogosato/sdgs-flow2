@@ -9,9 +9,16 @@
 ## DEMO
 ![Image from SDGS-FLOW](https://i.gyazo.com/6329a5c25e1ec21d65b196fe355636b2.jpg)
 
-## 使い方
+## USAGE
+１、ヘッダーの下のGOALSを押して、SDGSの概要を確認します。  
+２、トップページから目標を一つ選択します。  
+３、動画、具体的目標を閲覧します。  
+４、自分が取り組む活動を記述し、目標までの流れを作っていきます。
 
-## インストール法
+## INSTALL
+
+
+
 
 ## ライセンス
 
@@ -26,36 +33,36 @@
 - belongs_to :group
 - belongs_to :user
 
-## usersテーブル
-|Column|Type|Options|
-|------|----|-------|
-|email|string|null: false|
-|password|string|null: false|
-|name|string|null: false|
-### Association
-- has_many :groups_users
-- has_many :groups, through: :groups_users
-- has_many :messages
-
 ## groupsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|groupname|text|null: false|
-|messges_id|integer|null: false, foreign_key: true|
-|image|string|
-|text|text|
+|name|string|null: false|
+|image|string||
+|content|text||
+|youtube_url|string||
 ### Association
-- has_many :groups_users
-- has_many :users, through: :groups_users
+- has_many :group_users
+- has_many :users, through: :group_users
 - has_many :messages
 
 ## messagesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|text|text|null: false|
-|image|string|
+|content|string||
 |user_id|integer|null: false, foreign_key: true|
 |group_id|integer|null: false, foreign_key: true|
 ### Association
-- belongs_to :user
 - belongs_to :group
+- belongs_to :user
+
+## usersテーブル
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false|
+|email|string|null: false|
+|password|string|null: false|
+|admin|boolean|default: false|
+### Association
+- has_many :group_users
+- has_many :groups, through: :group_users
+- has_many :messages
