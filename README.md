@@ -39,9 +39,7 @@ rails s
 
 
 
-## ライセンス
-
-## 作者
+# DB schema
 
 ## group_usersテーブル
 |Column|Type|Options|
