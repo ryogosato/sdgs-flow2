@@ -1,27 +1,21 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## SDGS-FLOW
+テーマ：国連が定めた2030年までに達成したい持続可能な開発目標（SDGS）  
+  
+私たちがSDGSに取り組むことを考え、その活動がどうゆう流れで目標へ繋がるか
+記すアプリです。
+  
+## DEMO
+![Image from SDGS-FLOW](https://i.gyazo.com/6329a5c25e1ec21d65b196fe355636b2.jpg)
 
-Things you may want to cover:
+## 使い方
 
-* Ruby version
+## インストール法
 
-* System dependencies
+## ライセンス
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## 作者
 
 ## group_usersテーブル
 |Column|Type|Options|
