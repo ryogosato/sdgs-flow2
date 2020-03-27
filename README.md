@@ -11,12 +11,31 @@
 
 ## USAGE
 １、ヘッダーの下のGOALSを押して、SDGSの概要を確認します。  
+
 ２、トップページから目標を一つ選択します。  
+
 ３、動画、具体的目標を閲覧します。  
-４、自分が取り組む活動を記述し、目標までの流れを作っていきます。
+
+４、自分が取り組む活動を記述し、目標までの流れを作っていきます。  
+
+
+※ロゴはガイドライン、動画はチャンネル利用規約に基づいて使用しています。
+
 
 ## INSTALL
+```
+https://github.com/ryogosato/sdgs-flow2.git
 
+cd sdgs-flow2
+
+rails db:create
+
+rails db:migrate
+
+rails db:seed
+
+rails s
+```
 
 
 
