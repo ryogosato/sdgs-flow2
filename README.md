@@ -3,9 +3,9 @@
 ## SDGS-FLOW
 テーマ：国連が定めた2030年までに達成したい持続可能な開発目標（SDGs）  
   
-私たちがSDGsに取り組むことを考え、その活動がどうゆう流れで目標へ繋がるか
-記すアプリです。
+私たちがSDGsに取り組むことを考え、その活動がどうゆう流れで目標へ繋がるか考えるアプリです。
   
+使用言語：Ruby on Rails, HTML, Scss, Bootstrap
 ## DEMO
 ![Image from SDGs-FLOW](https://i.gyazo.com/6329a5c25e1ec21d65b196fe355636b2.jpg)
 
