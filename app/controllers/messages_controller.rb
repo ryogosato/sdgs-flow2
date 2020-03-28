@@ -19,10 +19,14 @@ class MessagesController < ApplicationController
     end
   end
 
+  def edit
+    @messages = @group.messages.includes(:user)
+  end
+
   def destroy
     message = Message.find(params[:id])
     message.destroy
-    redirect_to group_messages_path(@group)
+    redirect_to edit_group_messages_path(@group)
   end
 
   private

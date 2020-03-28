@@ -1,0 +1,23 @@
+<%= link_to (group_messages_path(@group)) do%>
+  <button type="button" class="btn btn-warning">戻る</button>
+<% end%>
+<div class="row c pl-4">
+  <% @messages.each do |message|%>
+    <%= link_to "/groups/#{@group.id}/messages/#{message.id}", method: :delete do%>
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-content"><%= message.content%></h5>
+          <div class="d-flex pull-right">
+            <div class="card-user m-1">
+              <%= message.user.name%>
+            </div>
+            <div class="card-time m-1">
+              <%= render partial: "time", locals: { message: message } %>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end%>
+    <h1>👉</h1>
+  <% end %>
+</div>
