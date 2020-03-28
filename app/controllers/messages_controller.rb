@@ -20,6 +20,7 @@ class MessagesController < ApplicationController
   end
 
   def edit
+    @messages = @group.messages.includes(:user)
   end
 
   def destroy
