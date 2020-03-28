@@ -1,4 +1,7 @@
-<div class="row c">
+<%= link_to (group_messages_path(@group)) do%>
+  <button type="button" class="btn btn-warning">戻る</button>
+<% end%>
+<div class="row c pl-4">
   <% @messages.each do |message|%>
     <%= link_to "/groups/#{@group.id}/messages/#{message.id}", method: :delete do%>
       <div class="card">
@@ -18,8 +21,3 @@
     <h1>👉</h1>
   <% end %>
 </div>
-
-
-    <%= link_to (group_messages_path(@group)) do%>
-      <button type="button" class="btn btn-warning">戻る</button>
-    <% end%>
