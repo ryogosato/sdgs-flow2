@@ -10,6 +10,8 @@
 ![Image from SDGs-FLOW](https://i.gyazo.com/6329a5c25e1ec21d65b196fe355636b2.jpg)
 
 ## Usage
+  URL: http://18.178.194.43/
+
 １、ヘッダーの下のGOALSロゴを押して、SDGSの概要を確認します。  
 
 ２、トップページから目標を一つ選択します。  
